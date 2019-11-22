@@ -1,0 +1,32 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group current-group
+      %ul.main-header__left-box__menber-list
+        Menber：
+        %li.main-header__left-box__menber-list__menber list_menber
+    =link_to "#" do
+      .main-header__edit-btn Edit
+
+  .messages
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker talker1
+        %p.message__upper-info__date 2019/11/22(Fri) 12:46:41
+      %p.message__text text1
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker talker2
+        %p.message__upper-info__date 2019/11/22(Fri) 12:46:42
+      %p.message__text text2
+
+  .form
+    %form.new_message{ id: "new_message", action: "#", method: "post", enctype: "multipart/form-data"}
+      %input{name: "utf-8",type: "hidden"}
+      %input{name: "authenticity_token",type: "hidden"}
+      .input-box
+        %input.input-box__text{placeholder: "type a message", type: "text", name: "message[content]", id: "message_content"}
+        %label.input-box__image{for: "message_image"}
+          = icon('fas', 'image')
+          %input.input-box__image__file{type: "file", name: "message[image]", id: "message_image"}
+      %input.submit-btn{type: "submit", name: "commit",value: "Send"}

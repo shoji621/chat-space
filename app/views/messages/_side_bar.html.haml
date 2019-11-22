@@ -1,0 +1,16 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %p.side-header__box--user-name side-header__box--user-name
+      %ul.side-header__box--menu
+        %li.side-header__box--menu__new-group
+          =link_to "#" do
+            = icon('fas', 'edit')
+        %li.side-header__box--menu__edit-group
+          =link_to "#" do
+            = icon('fas', 'cog')
+  .groups
+    .group
+      %p.group__group-name group__group-name
+      %p.group__group-latest-message group__group-latest-message
+
