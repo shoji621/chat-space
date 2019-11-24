@@ -1,11 +1,11 @@
+@import "config/colors";
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-$chatWhiteColor: #fff;
-$chatBlueColor: #38aef0;
 
 * {
   box-sizing: border-box;
@@ -33,15 +33,15 @@ p {
 
 .chat-side {
   width: 300px;
-  color: $chatWhiteColor;
+  color: $white;
   float: left;
   font-weight: bold;
 
   a {
-    color: $chatWhiteColor;
+    color: $white;
   }
   .side-header {
-    background-color: #253141;
+    background-color: $side_blue_dark;
     height: 100px;
     display: flex;
     align-items: center;
@@ -67,7 +67,7 @@ p {
   }
 
   .groups {
-    background-color: #2f3e51;
+    background-color: $side_blue_light;
     height: calc(100vh - 100px);
     padding: 20px 20px 0 ;
     overflow: scroll;
@@ -108,18 +108,18 @@ p {
       &__menber-list {
         display: flex;
         font-size: 12px;
-        color: #999999;
+        color: $light_gray;
       }
     }
     a:visited {
-      color: $chatBlueColor;
+      color: $light_blue;
     }
     &__edit-btn {
       height: 40px;
       line-height: 40px;
       padding: 0 20px;
       margin-top: 30px;
-      border: solid 1px $chatBlueColor;
+      border: solid 1px $light_blue;
       right: 40px;
     }
   }
@@ -132,7 +132,7 @@ p {
 
     .message {
       padding-bottom: 40px;
-      color: #434a54;
+      color: $black;
 
       &__upper-info {
         display: flex;
@@ -143,7 +143,7 @@ p {
           font-weight: bold;
         }
         &__date {
-          color: #999999;
+          color: $light_gray;
           font-size: 12px;
           margin-left: 10px;
         }
@@ -171,7 +171,7 @@ p {
           height: 50px;
           width: 100%;
           padding: 0 40px 0 10px;
-          color: #434a54;
+          color: $black;
           border-style: none;
         }
         &__image {
@@ -191,8 +191,8 @@ p {
         height: 50px;
         padding: 0 30px;
         margin-left: 15px;
-        background-color: $chatBlueColor;
-        color: $chatWhiteColor;
+        background-color: $light_blue;
+        color: $white;
         cursor: pointer;
       }
   }
