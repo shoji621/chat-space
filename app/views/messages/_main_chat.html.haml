@@ -9,17 +9,8 @@
       .main-header__edit-btn Edit
 
   .messages
-    .message
-      .message__upper-info
-        %p.message__upper-info__talker talker1
-        %p.message__upper-info__date 2019/11/22(Fri) 12:46:41
-      %p.message__text text1
-    .message
-      .message__upper-info
-        %p.message__upper-info__talker talker2
-        %p.message__upper-info__date 2019/11/22(Fri) 12:46:42
-      %p.message__text text2
-
+    = render @messages
+    
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
