@@ -1,11 +1,14 @@
 .chat-main
   .main-header
     .main-header__left-box
-      %h2.main-header__left-box__current-group current-group
+      %h2.main-header__left-box__current-group
+        = @group.name
       %ul.main-header__left-box__menber-list
         Menber：
-        %li.main-header__left-box__menber-list__menber list_menber
-    =link_to "#" do
+        %li.main-header__left-box__menber-list__menber
+          - @group.users.each do |user|
+            = user.nickname
+    =link_to edit_group_path(@group) do
       .main-header__edit-btn Edit
 
   .messages
