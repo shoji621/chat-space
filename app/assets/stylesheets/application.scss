@@ -2,7 +2,38 @@
 @import "config/colors";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
-@import "modules/messages";
+@import "modules/chat";
+@import "modules/side_bar";
 @import "modules/user";
 @import "modules/flash";
 @import "modules/group";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  display: list-item;
+}
+
+p {
+  display: block;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+}
