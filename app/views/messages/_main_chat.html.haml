@@ -21,12 +21,10 @@
       %p.message__text text2
 
   .form
-    %form.new_message{ id: "new_message", action: "#", method: "post", enctype: "multipart/form-data"}
-      %input{name: "utf-8",type: "hidden"}
-      %input{name: "authenticity_token",type: "hidden"}
-      .input-box
-        %input.input-box__text{placeholder: "type a message", type: "text", name: "message[content]", id: "message_content"}
-        %label.input-box__image{for: "message_image"}
-          = icon('fas', 'image')
-          %input.input-box__image__file{type: "file", name: "message[image]", id: "message_image"}
-      %input.submit-btn{type: "submit", name: "commit", value: "Send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
