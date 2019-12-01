@@ -45,7 +45,7 @@ $(function(){
     .fail(function() {
       alert('非同期通信に失敗しました');
     })
-    .always(function(){
+    .always(function() {
       $('.form__submit').removeAttr("disabled");
     });
   })
@@ -70,6 +70,7 @@ $(function(){
           $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight},'fast');
         })
         .fail(function() {
+          alert('メッセージ取得に失敗しました');
         });
     }
     else {
